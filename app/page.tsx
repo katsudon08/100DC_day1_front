@@ -63,9 +63,9 @@ export default function Home() {
       </div>
 
       {/* Main chat area */}
-      <div className="flex-1 flex flex-col h-full">
+      <div className="flex flex-col flex-1 h-full">
         {/* Mobile menu toggle */}
-        <div className="md:hidden p-2 border-b">
+        <div className="p-2 border-b md:hidden">
           <Button variant="outline" size="sm" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? "閉じる" : "会話履歴"}
           </Button>
@@ -73,7 +73,7 @@ export default function Home() {
 
         {/* Chat messages */}
         <ScrollArea className="flex-1 p-4">
-          <div className="space-y-4 max-w-3xl mx-auto">
+          <div className="max-w-3xl mx-auto space-y-4">
             {messages.map((message) => (
               <ChatMessage key={message.id} message={message} />
             ))}
@@ -92,7 +92,7 @@ export default function Home() {
                 className="flex-1"
               />
               <Button type="submit" size="icon">
-                <Send className="h-4 w-4" />
+                <Send className="w-4 h-4" />
                 <span className="sr-only">送信</span>
               </Button>
             </form>
